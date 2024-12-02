@@ -1,0 +1,26 @@
+<p>add-event works!</p>
+<h2>Ajouter un événement</h2>
+<form (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Titre</mat-label>
+    <input matInput [(ngModel)]="event.title" name="title" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="event.description" name="description" required></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Date et Heure</mat-label>
+    <input matInput [(ngModel)]="event.dateHeure" name="dateHeure" type="datetime-local" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Rappel avant </mat-label>
+    <input matInput [(ngModel)]="event.rappelAvant" name="rappelAvant" type="number" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Ajouter</button>
+</form>
+
