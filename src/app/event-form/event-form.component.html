@@ -1,0 +1,57 @@
+<p>event-form works!</p>
+<div class="event-form">
+    <h2>Ajouter un événement</h2>
+    
+    <form (ngSubmit)="onSubmit()" #eventForm="ngForm">
+      <div>
+        <label for="title">Titre</label>
+        <input 
+          type="text" 
+          id="title" 
+          name="title" 
+          ngModel 
+          required 
+          placeholder="Entrez le titre de l'événement"
+        />
+      </div>
+  
+      <div>
+        <label for="description">Description</label>
+        <textarea 
+          id="description" 
+          name="description" 
+          ngModel 
+          required 
+          placeholder="Entrez la description de l'événement"
+        ></textarea>
+      </div>
+  
+      <div>
+        <label for="date">Date</label>
+        <input 
+          type="date" 
+          id="date" 
+          name="date" 
+          ngModel 
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="time">Heure</label>
+        <input 
+          type="time" 
+          id="time" 
+          name="time" 
+          ngModel 
+          required
+        />
+      </div>
+  
+      <!-- Champ caché pour l'ID -->
+      <input type="hidden" name="id" [(ngModel)]="event.id">
+  
+      <button type="submit" [disabled]="!eventForm.form.valid">Ajouter l'événement</button>
+    </form>
+  </div>
+  
