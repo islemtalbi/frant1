@@ -15,7 +15,7 @@ export class FormulaireComponent {
 
   constructor(private fb: FormBuilder) {
     this.formulaire = this.fb.group({
-      id: [null, [Validators.required]], // Long
+     
       titre: ['', [Validators.required, Validators.maxLength(100)]], // String
       description: ['', [Validators.required, Validators.maxLength(500)]], // String
       dateheure: [null, [Validators.required]], // LocalDateTime

@@ -1,0 +1,25 @@
+<p>liste works!</p>
+<table>
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Date et Heure</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evenement of evenements">
+        <td>{{ evenement.titre }}</td>
+        <td>{{ evenement.description }}</td>
+        <td>{{ evenement.dateheure | date:'short' }}</td> <!-- Formatage de la date -->
+        <td>
+          <button (click)="updateEvenement(evenement.id)">Update</button>
+          <button (click)="deleteEvenement(evenement.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <button routerLink="/ajouter-evenement">Ajouter un événement</button>
+  
