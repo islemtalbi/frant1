@@ -2,6 +2,8 @@ import {NgModule} from '@angular/core';
 import {Routes ,RouterModule} from '@angular/router';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ListeComponent } from './liste/liste.component';
+import { ParticipantComponent } from './participant/participant.component';
+
 const routes:Routes=[
   { path: 'ajouter-evenement', component: FormulaireComponent },
   { path: 'modifier-evenement/:id', component: FormulaireComponent },
