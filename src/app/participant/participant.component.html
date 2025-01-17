@@ -1,21 +1,30 @@
-<h1 style="text-align: center;">Ajouter un participant </h1>
-<form (ngSubmit)="onSubmit()" #participantForm="ngForm">
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" required [(ngModel)]="participant.email" name="email">
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" required [(ngModel)]="participant.password" name="password">
-    </div>
-    <div>
-      <label for="firstName">First Name:</label>
-      <input type="text" id="firstName" required [(ngModel)]="participant.firstName" name="firstName">
-    </div>
-    <div>
-      <label for="lastName">Last Name:</label>
-      <input type="text" id="lastName" required [(ngModel)]="participant.lastName" name="lastName">
-    </div>
-    <button type="submit">Soumettre</button>
-  </form>
+<h1 style="text-align: center;">Ajouter un participant</h1>
+
+<form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="id_utilisateur">Id utilisateur</label>
+    <input type="number" id="id_utilisateur" formControlName="id_utilisateur">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password">
+  </div>
+
+  <div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" formControlName="firstname">
+  </div>
+
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" formControlName="lastname">
+  </div>
   
+  <button type="submit">Soumettre</button>
+</form>
