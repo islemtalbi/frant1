@@ -3,10 +3,12 @@ import {Routes ,RouterModule} from '@angular/router';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ListeComponent } from './liste/liste.component';
 import { ParticipantComponent } from './participant/participant.component';
+import { ListeparticipantComponent } from './listeparticipant/listeparticipant.component';
 
 const routes:Routes=[
+  { path: 'liste', component: ListeComponent },
   { path: 'ajouter-evenement', component: FormulaireComponent },
-  { path: 'liste', component: ListeComponent }
+  { path: '', redirectTo: '/liste', pathMatch: 'full' },
 ]
 
 

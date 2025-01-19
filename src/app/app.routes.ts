@@ -1,3 +1,8 @@
 import { Routes } from '@angular/router';
-
-export const routes: Routes = [];
+import { FormulaireComponent } from './formulaire/formulaire.component';
+import { ListeComponent } from './liste/liste.component';
+export const routes: Routes = [
+    { path: 'liste', component: ListeComponent },
+    { path: 'ajouter-evenement', component: FormulaireComponent },
+    { path: '', redirectTo: '/ajouter-evenement', pathMatch: 'full' },
+];

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators ,ReactiveFormsModule } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-formulaire',
   standalone: true,
@@ -13,22 +13,37 @@ export class FormulaireComponent {
   
   formulaire: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private router: Router) {
     this.formulaire = this.fb.group({
      
-      id_utilisateur: [null, [Validators.required, Validators.min(1)]], // Validator to ensure a positive number
-      email: ['', [Validators.required, Validators.email]], // Ensures a valid email format
-      password: ['', [Validators.required, Validators.minLength(6)]], // Ensures password is at least 6 characters long
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required]
+      titre: ['', Validators.required],
+      description: [''],
+      dateheure: ['', Validators.required],
+      rappelavant: [null, [Validators.min(0)]],
+      userid: [null, [Validators.required, Validators.min(1)]],
+      participants: ['']
     });
+    
   }
 
+  // Méthode pour soumettre le formulaire
+  
+  ngOnInit(): void {
+    this.formulaire = this.fb.group({
+      titre: ['', Validators.required],
+      description: [''],
+      dateheure: ['', Validators.required],
+      rappelavant: [null, [Validators.min(0)]],
+      userid: [null, Validators.required],
+      participants: ['']
+    });
+  } 
   // Méthode pour soumettre le formulaire
   onSubmit() {
     if (this.formulaire.valid) {
       console.log(this.formulaire.value);
-      // Ici, vous pouvez appeler un service pour soumettre les données.
+      // Navigate to another page after successful submission
+      this.router.navigate(['/liste ']); // Remplacez '/confirmation' par votre chemin de destination
     } else {
       console.log('Formulaire invalide');
     }
