@@ -6,10 +6,12 @@ import { ParticipantComponent } from './participant/participant.component';
 
 const routes:Routes=[
   { path: 'ajouter-evenement', component: FormulaireComponent },
-  { path: 'modifier-evenement/:id', component: FormulaireComponent },
-  { path: 'evenements', component: ListeComponent }, // Page de la liste des événements
-  { path: '', redirectTo: '/evenements', pathMatch: 'full' },
+  { path: 'liste', component: ListeComponent }
 ]
+
+
+  
+
 @NgModule({
     imports:[RouterModule.forRoot(routes)],
     exports:[RouterModule]

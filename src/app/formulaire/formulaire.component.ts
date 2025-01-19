@@ -16,12 +16,11 @@ export class FormulaireComponent {
   constructor(private fb: FormBuilder) {
     this.formulaire = this.fb.group({
      
-      titre: ['', [Validators.required, Validators.maxLength(100)]], // String
-      description: ['', [Validators.required, Validators.maxLength(500)]], // String
-      dateheure: [null, [Validators.required]], // LocalDateTime
-      rappelavant: [null, [Validators.required]], // Int
-      userid: [null, [Validators.required]], // Long
-      participants: [[], [Validators.required]] // List
+      id_utilisateur: [null, [Validators.required, Validators.min(1)]], // Validator to ensure a positive number
+      email: ['', [Validators.required, Validators.email]], // Ensures a valid email format
+      password: ['', [Validators.required, Validators.minLength(6)]], // Ensures password is at least 6 characters long
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required]
     });
   }
 
